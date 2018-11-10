@@ -10,9 +10,13 @@ class ElementController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-    def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond Element.list(params), model:[elementInstanceCount: Element.count()]
+    def index() {
+        Map userLogged = session.userAccountResponse
+        List users = []
+        if (userLogged){
+            users = dataService.getUsers(userLogged.id)
+        }
+        render(view: "index", model: [users: users])
     }
 
     def show(Element elementInstance) {

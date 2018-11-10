@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Simple Sidebar - Start Bootstrap Template</title>
+    <title>Gestor de Organizadores</title>
 
     <!-- Bootstrap core CSS -->
     <link rel='stylesheet prefetch'
@@ -34,9 +34,6 @@
                 <g:link controller="organizer">Organizadores</g:link>
             </li>
             <li>
-                <g:link controller="permission">Permisos</g:link>
-            </li>
-            <li>
                 <g:link controller="role">Roles</g:link>
             </li>
             <li>
@@ -45,6 +42,8 @@
             <li>
                 <g:link controller="element">Elementos</g:link>
             </li>
+            <br>
+            <br>
             <br>
             <br>
             <br>
@@ -71,7 +70,7 @@
     <div id="page-content-wrapper">
         <div class="container-fluid">
 
-            <h1>Tus Organizadores</h1>
+            <h1>Mis Organizadores</h1>
 
             <table class="table">
                 <thead>

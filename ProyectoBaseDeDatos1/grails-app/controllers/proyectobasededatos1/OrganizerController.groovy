@@ -10,7 +10,7 @@ class OrganizerController {
 
     DataService dataService
 
-    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+    static allowedMethods = [save: "POST", update: "PUT", delete: "POST"]
 
     def index(Integer max) {
         Map userLogged = session.userAccountResponse
@@ -23,8 +23,9 @@ class OrganizerController {
 
     def show() {
         Map organizer = dataService.getOrganizerById(params.id)
+        Map userLogged = session.userAccountResponse
         organizer.hasProperty = false
-        [organizer: organizer]
+        [organizer: organizer, user: userLogged]
     }
 
     def create() {
@@ -32,27 +33,13 @@ class OrganizerController {
     }
 
     @Transactional
-    def save(Organizer organizerInstance) {
-        if (organizerInstance == null) {
-            notFound()
-            return
-        }
+    def save() {
+        def data = request.JSON
+        dataService.createOrganizer(data)
 
-        if (organizerInstance.hasErrors()) {
-            respond organizerInstance.errors, view:'create'
-            return
-        }
-
-        organizerInstance.save flush:true
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'organizer.label', default: 'Organizer'), organizerInstance.id])
-                redirect organizerInstance
-            }
-            '*' { respond organizerInstance, [status: CREATED] }
-        }
+        render [:] as JSON
     }
+
     @Transactional
     def edit() {
         def data = request.JSON
@@ -85,22 +72,12 @@ class OrganizerController {
     }
 
     @Transactional
-    def delete(Organizer organizerInstance) {
+    def delete() {
+        def data = request.JSON
+        dataService.deleteOrganizer(data)
 
-        if (organizerInstance == null) {
-            notFound()
-            return
-        }
+        render [:] as JSON
 
-        organizerInstance.delete flush:true
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'Organizer.label', default: 'Organizer'), organizerInstance.id])
-                redirect action:"index", method:"GET"
-            }
-            '*'{ render status: NO_CONTENT }
-        }
     }
 
     protected void notFound() {

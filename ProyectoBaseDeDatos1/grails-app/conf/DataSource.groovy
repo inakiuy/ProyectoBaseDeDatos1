@@ -18,7 +18,8 @@ environments {
     development {
         dataSource {
             dbCreate = "none" // one of 'create', 'create-drop', 'update', 'validate', ''
-            url = "jdbc:postgresql://10.8.0.1:5432/bd-ucu"
+            //url = "jdbc:postgresql://10.8.0.1:5432/bd-ucu"
+            url = "jdbc:postgresql://192.168.1.2:5432/bd-ucu"
         }
     }
     test {

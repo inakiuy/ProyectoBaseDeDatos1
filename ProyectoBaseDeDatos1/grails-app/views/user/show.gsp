@@ -22,56 +22,61 @@
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
 			<ol class="property-list user">
-			
-				<g:if test="${userInstance?.email}">
+
+
+				<g:if test="${user?.id}">
+					<g:hiddenField name="idUser" value="${user?.id}"></g:hiddenField>
+				</g:if>
+
+				<g:if test="${user?.email}">
 				<li class="fieldcontain">
 					<span id="email-label" class="property-label"><g:message code="user.email.label" default="Email" /></span>
 					
-						<span class="property-value" aria-labelledby="email-label"><g:fieldValue bean="${userInstance}" field="email"/></span>
+						<span class="property-value" aria-labelledby="email-label">
+							<g:textField name="userEmail" id="userEmail" value="${user.email}" />
+						</span>
 					
 				</li>
 				</g:if>
 			
-				<g:if test="${userInstance?.lastname}">
+				<g:if test="${user?.lastname}">
 				<li class="fieldcontain">
 					<span id="lastname-label" class="property-label"><g:message code="user.lastname.label" default="Lastname" /></span>
 					
-						<span class="property-value" aria-labelledby="lastname-label"><g:fieldValue bean="${userInstance}" field="lastname"/></span>
+						<span class="property-value" aria-labelledby="lastname-label">
+							<g:textField name="userLastName" id="userLastName" value="${user.lastname}" />
+						</span>
 					
 				</li>
 				</g:if>
 			
-				<g:if test="${userInstance?.name}">
+				<g:if test="${user?.name}">
 				<li class="fieldcontain">
 					<span id="name-label" class="property-label"><g:message code="user.name.label" default="Name" /></span>
-					
-						<span class="property-value" aria-labelledby="name-label"><g:fieldValue bean="${userInstance}" field="name"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${userInstance?.password}">
-				<li class="fieldcontain">
-					<span id="password-label" class="property-label"><g:message code="user.password.label" default="Password" /></span>
-					
-						<span class="property-value" aria-labelledby="password-label"><g:fieldValue bean="${userInstance}" field="password"/></span>
+						<span class="property-value" aria-labelledby="name-label">
+							<g:textField name="userName" id="userName" value="${user.name}" />
+						</span>
 					
 				</li>
 				</g:if>
+
 			
-				<g:if test="${userInstance?.phone}">
+				<g:if test="${user?.phone}">
 				<li class="fieldcontain">
 					<span id="phone-label" class="property-label"><g:message code="user.phone.label" default="Phone" /></span>
-					
-						<span class="property-value" aria-labelledby="phone-label"><g:fieldValue bean="${userInstance}" field="phone"/></span>
-					
+						<span class="property-value" aria-labelledby="phone-label">
+							<g:textField name="userPhone" id="userPhone" value="${user.phone}" />
+						</span>
 				</li>
 				</g:if>
 			
 			</ol>
-			<g:form url="[resource:userInstance, action:'delete']" method="DELETE">
+			<g:form url="[resource:user, action:'delete']" method="DELETE">
 				<fieldset class="buttons">
-					<g:link class="edit" action="edit" resource="${userInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
+					<a href="#"  id="editUser">
+						<g:message code="default.button.edit.label" default="Edit" />
+					</a>
+
 					<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
 				</fieldset>
 			</g:form>

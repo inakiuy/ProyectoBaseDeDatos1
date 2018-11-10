@@ -29,34 +29,21 @@
 						<g:sortableColumn property="lastname" title="${message(code: 'user.lastname.label', default: 'Lastname')}" />
 					
 						<g:sortableColumn property="name" title="${message(code: 'user.name.label', default: 'Name')}" />
-					
-						<g:sortableColumn property="password" title="${message(code: 'user.password.label', default: 'Password')}" />
-					
-						<g:sortableColumn property="phone" title="${message(code: 'user.phone.label', default: 'Phone')}" />
-					
+
 					</tr>
 				</thead>
 				<tbody>
-				<g:each in="${userInstanceList}" status="i" var="userInstance">
-					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
-						<td><g:link action="show" id="${userInstance.id}">${fieldValue(bean: userInstance, field: "email")}</g:link></td>
-					
-						<td>${fieldValue(bean: userInstance, field: "lastname")}</td>
-					
-						<td>${fieldValue(bean: userInstance, field: "name")}</td>
-					
-						<td>${fieldValue(bean: userInstance, field: "password")}</td>
-					
-						<td>${fieldValue(bean: userInstance, field: "phone")}</td>
-					
+
+				<g:each in="${users}">
+					<tr class="even">
+						<td><g:link action="show" id="${it.id}">${it.email}</g:link></td>
+						<td>${it.lastname}</td>
+						<td>${it.name}</td>
 					</tr>
 				</g:each>
+
 				</tbody>
 			</table>
-			<div class="pagination">
-				<g:paginate total="${userInstanceCount ?: 0}" />
-			</div>
 		</div>
 	</body>
 </html>

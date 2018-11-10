@@ -7,7 +7,7 @@
 		<g:message code="organizer.description.label" default="Description" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="description" required="" value="${organizerInstance?.description}"/>
+	<g:textField name="description" id="descriptionOrganizer" required="" />
 
 </div>
 
@@ -16,7 +16,7 @@
 		<g:message code="organizer.name.label" default="Name" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="name" required="" value="${organizerInstance?.name}"/>
+	<g:textField name="name" id="nameOrganizer" required="" />
 
 </div>
 

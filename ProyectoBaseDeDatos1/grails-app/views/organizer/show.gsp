@@ -26,6 +26,7 @@
 				<g:if test="${organizer?.id}">
 					<g:hiddenField name="idOrganizer" value="${organizer?.id}"></g:hiddenField>
 				</g:if>
+				<g:hiddenField name="idUser" value="${user?.id}"></g:hiddenField>
 
 				<g:if test="${organizer?.description}">
 				<li class="fieldcontain">
@@ -55,10 +56,74 @@
 					<a href="#"  id="editOrganizer">
 						<g:message code="default.button.edit.label" default="Edit" />
 					</a>
-					<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+					<a href="#"  id="deleteOrganizer">
+						<g:message code="default.button.delete.label" default="Delete" />
+					</a>
+
 				</fieldset>
 			</g:form>
 		</div>
+        <br>
+	    <div class="content scaffold-show" role="main">
+			<h1>Elementos del organizador ${organizer?.name}</h1>
+			<br>
+			<table>
+				<thead>
+				<tr>
+
+					<g:sortableColumn property="description" title="${message(code: 'organizer.description.label', default: 'Description')}" />
+
+					<g:sortableColumn property="name" title="${message(code: 'organizer.name.label', default: 'Name')}" />
+
+				</tr>
+				</thead>
+				<tbody>
+				<g:each in="${[1,2]}">
+					<tr class="even">
+						<td>lkjs</td>
+						<td><g:link action="show" >jsad</g:link></td>
+					</tr>
+				</g:each>
+				</tbody>
+			</table>
+
+
+		</div>
+	    <br>
+	    <div  class="content scaffold-show" role="main">
+		<h1><g:message code="default.create.label" args="['Elemento']" /></h1>
+		<g:if test="${flash.message}">
+			<div class="message" role="status">${flash.message}</div>
+		</g:if>
+		<ol class="property-list organizer">
+			<fieldset class="form">
+				<div class="fieldcontain ${hasErrors(bean: elementInstance, field: 'description', 'error')} required">
+					<label for="description">
+						<g:message code="element.description.label" default="Description" />
+						<span class="required-indicator">*</span>
+					</label>
+					<g:textField name="description" required=""/>
+
+				</div>
+
+				<div class="fieldcontain ${hasErrors(bean: elementInstance, field: 'name', 'error')} required">
+					<label for="name">
+						<g:message code="element.name.label" default="Name" />
+						<span class="required-indicator">*</span>
+					</label>
+					<g:textField name="name" required="" />
+
+				</div>
+			</fieldset>
+		</ol>
+		<g:form url="[resource:organizer, action:'delete']" method="DELETE">
+			<fieldset class="buttons">
+				<a href="#"  id="createElement">
+					<g:message code="default.button.create.label" default="Crear" />
+				</a>
+			</fieldset>
+		</g:form>
+	</div>
 	</body>
 
 </html>
