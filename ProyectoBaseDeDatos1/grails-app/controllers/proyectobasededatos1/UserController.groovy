@@ -6,6 +6,8 @@ import grails.transaction.Transactional
 @Transactional(readOnly = true)
 class UserController {
 
+    DataService dataService
+
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
@@ -18,7 +20,12 @@ class UserController {
     }
 
     def create() {
-        respond new User(params)
+
+        Boolean result = dataService.insertUser(params)
+        if(result) {
+            respond new User(params)
+        }
+
     }
 
     @Transactional

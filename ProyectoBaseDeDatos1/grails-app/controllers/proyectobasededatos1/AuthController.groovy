@@ -4,9 +4,15 @@ class AuthController {
 
     Map login() {
         println 'hoolaaa'
+        def test = request.JSON
+        println params
+        println test
         session.userAccountResponse = [name:'Gaspar']
         session.userAuthenticationResponse =  [key:'test']
         redirect (controller: 'dashboard', action: 'index')
+
+
+
     }
 
     /**
