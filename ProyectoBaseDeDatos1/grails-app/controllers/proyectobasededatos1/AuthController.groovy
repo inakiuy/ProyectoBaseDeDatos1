@@ -5,13 +5,13 @@ class AuthController {
     DataService dataService
 
     Map login() {
-        def exists = dataService.getUserByEmail(params.email)
+        def exists = dataService.getUserByEmail(params.email, params.password)
         if (exists) {
-            session.userAccountResponse = [name:'Gaspar']
-            session.userAuthenticationResponse =  [key:'test']
+            session.userAccountResponse = exists
             redirect (controller: 'dashboard', action: 'index')
         } else {
-            println('No se puede entrar')
+            request.test = true
+            redirect(uri:'/', params: [succes: "true"])
         }
     }
 

@@ -24,58 +24,64 @@ class DataService {
         SELECT "email" FROM user WHERE "email" = yagoauza@hotmail.com
     '''
 
-    def getUserByEmail (email) {
+    Map getUserByEmail (email, password) {
 
+        Map user = [:]
        Connection connection = dataSource.getConnection()
-       PreparedStatement statement = connection.prepareStatement("SELECT * FROM public.user where email = 'yagoauza@hotmail.com'")
+       PreparedStatement statement = connection.prepareStatement("SELECT * FROM public.user where email ='" +  email + "' AND password ='" + password + "'")
         println(statement)
         ResultSet resultSet = statement.executeQuery()
-        while (resultSet.next()) {
-            println(resultSet.getInt(1))
+        if (resultSet.rows.size > 0) {
+            while (resultSet.next()) {
+                user.id = resultSet.getInt(1)
+                user.name = resultSet.getString(2)
+                user.lastName = resultSet.getString(3)
+                user.phone = resultSet.getString(4)
+                user.phone = resultSet.getString(5)
+            }
         }
+       return user
     }
 
 
-    def getUsers () {
-        DataBaseProxy dataBaseProxy = new DataBaseProxy()
+    List getOrganizerByUserId (userId) {
 
-        Sql sql = dataBaseProxy.connect()
+     String query = """
 
-        List rows = sql.rows(QUERY_GET_USERS)
+     SELECT org.*
+        FROM    public.user_organizer_role usorrol
 
-        println rows
+        INNER JOIN public.user us
+        ON usorrol.user_id = us.id
+        INNER JOIN public.role rol
+        ON usorrol.role_id = rol.id
+        INNER JOIN public.organizer org
+        ON usorrol.organizer_id = org.id
+
+        WHERE   us.id = ?
+
+        """
+
+        List organizers = []
+        Connection connection = dataSource.getConnection()
+        PreparedStatement statement = connection.prepareStatement(query)
+        statement.setLong(1, userId)
+        println(statement)
+        ResultSet resultSet = statement.executeQuery()
+        if (resultSet.rows.size > 0) {
+            while (resultSet.next()) {
+                Map organizer = [:]
+                organizer.id = resultSet.getInt(1)
+                organizer.description = resultSet.getString(2)
+                organizer.name = resultSet.getString(3)
+                organizer.type = resultSet.getInt(4)
+                organizers.add(organizer)
+            }
+        }
+        println(organizers)
+
+        return organizers
+
     }
-
-    def insertUser (Map user) {
-//        Connection connection = dataSource.getConnection()
-//        PreparedStatement statement
-//        statement = connection.prepareStatement(QUERY_GET_USERS)
-//        ResultSet resultSet = statement.executeQuery()
-//
-//        println(resultSet)
-
-        //def reqdColName = "name"
-        def query = "select * from permission"
-
-        Sql sql = new Sql(dataSource)
-
-        def list= sql.rows(query)
-
-        println(list)
-
-       // def array = sql.executeQuery(query).getArray(reqdColName)
-       // def personList = Arrays.asList(array)
-      //  println(personList)
-
-//        sql.eachRow(QUERY_GET_USERS) {
-//            println(it)
-//        }
-
-        //DataBaseProxy dataBaseProxy = new DataBaseProxy()
-        //Sql sql = dataBaseProxy.connect()
-        //Boolean ok = sql.execute(user, INSERT_USERS)
-        //return ok
-    }
-
 
 }

@@ -27,7 +27,7 @@
         <ul class="sidebar-nav">
             <li class="sidebar-brand">
                 <a href="#">
-                    Bienvenido Gaspar
+                    Bienvenido ${session.userAccountResponse.name}  ${session.userAccountResponse.lastName}
                 </a>
             </li>
             <li>
@@ -70,10 +70,29 @@
     <!-- Page Content -->
     <div id="page-content-wrapper">
         <div class="container-fluid">
-            <h1>Simple Sidebar</h1>
-            <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
-            <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
-            <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a>
+
+            <h1>Tus Organizadores</h1>
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">Tipo Organizador</th>
+                </tr>
+                </thead>
+                <tbody>
+                <g:each in="${organizers}" var="organizer" status="i">
+                    <tr>
+                        <th scope="row">${organizer.id}</th>
+                        <td>${organizer.name}</td>
+                        <td>${organizer.description}</td>
+                        <td>${organizer.type}</td>
+                    </tr>
+                </g:each>
+                </tbody>
+            </table>
         </div>
     </div>
     <!-- /#page-content-wrapper -->

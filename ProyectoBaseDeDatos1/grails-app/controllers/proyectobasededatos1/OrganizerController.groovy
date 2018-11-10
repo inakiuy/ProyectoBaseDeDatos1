@@ -8,11 +8,20 @@ import grails.transaction.Transactional
 @Transactional(readOnly = true)
 class OrganizerController {
 
+    DataService dataService
+
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond Organizer.list(params), model:[organizerInstanceCount: Organizer.count()]
+        Map userLogged = session.userAccountResponse
+        List organizers = []
+        if (userLogged){
+            organizers = dataService.getOrganizerByUserId(userLogged.id)
+        }
+        render(view: "index", model: [organizers: organizers])
+       // [organizerInstanceList: organizers]
+
+        //respond model:[organizerInstanceList: organizers,organizerInstanceCount: organizers.size()]
     }
 
     def show(Organizer organizerInstance) {

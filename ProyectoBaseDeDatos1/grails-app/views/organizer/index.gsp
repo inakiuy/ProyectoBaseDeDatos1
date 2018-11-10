@@ -31,12 +31,12 @@
 					</tr>
 				</thead>
 				<tbody>
-				<g:each in="${organizerInstanceList}" status="i" var="organizerInstance">
+                 <g:each in="${organizers}">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${organizerInstance.id}">${fieldValue(bean: organizerInstance, field: "description")}</g:link></td>
+						<td><g:link action="show" id="${it.id}">${fieldValue(bean: organizer, field: "description")}</g:link></td>
 					
-						<td>${fieldValue(bean: organizerInstance, field: "name")}</td>
+						<td>${fieldValue(bean: it, field: "name")}</td>
 					
 					</tr>
 				</g:each>

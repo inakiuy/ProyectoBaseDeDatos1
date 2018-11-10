@@ -27,19 +27,9 @@
 		Sesion</button>
 
 	</g:form>
-	<g:if test="${params.appAuthenticateFailed == 'true'}">
-		<div class="alert alert-danger alert-error">
-			<strong> Ha ocurrido un error al intentar acceder al sitio.</strong>
-		</div>
-	</g:if>
-	<g:if test="${params.userAuthenticateFailed == 'true'}">
+	<g:if test="${params && request.test}">
 		<div class="alert alert-danger alert-error">
 			<strong>La contrase&ntilde;a y/o usuario que ingresaste es incorrecta.</strong>
-		</div>
-	</g:if>
-	<g:if test="${params.getUserAccountFailed == 'true'}">
-		<div class="alert alert-danger alert-error">
-			<strong> Ha ocurrido un error al intentar obtener los datos del usuario.</strong>
 		</div>
 	</g:if>
 </div>
