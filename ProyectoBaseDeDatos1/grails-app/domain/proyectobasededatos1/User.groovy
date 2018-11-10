@@ -3,7 +3,7 @@ package proyectobasededatos1
 class User {
 
 	String name
-	String lastname
+	String lastName
 	String phone
 	String email
 	String password

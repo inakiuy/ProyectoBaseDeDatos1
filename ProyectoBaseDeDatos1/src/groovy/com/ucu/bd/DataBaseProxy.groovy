@@ -1,5 +1,6 @@
 package com.ucu.bd
 
+import org.postgresql.Driver
 
 import java.sql.DriverManager
 

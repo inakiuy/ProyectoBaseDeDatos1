@@ -12,7 +12,7 @@ class UserController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond User.list(params), model:[userInstanceCount: User.count()]
+        //respond User.list(params), model:[userInstanceCount: User.count()]
     }
 
     def show(User userInstance) {
@@ -20,12 +20,7 @@ class UserController {
     }
 
     def create() {
-
-        Boolean result = dataService.insertUser(params)
-        if(result) {
-            respond new User(params)
-        }
-
+        respond new User(params)
     }
 
     @Transactional
@@ -40,7 +35,9 @@ class UserController {
             return
         }
 
-        userInstance.save flush:true
+        Boolean result = dataService.insertUser(params)
+
+        //userInstance.save flush:true
 
         request.withFormat {
             form multipartForm {

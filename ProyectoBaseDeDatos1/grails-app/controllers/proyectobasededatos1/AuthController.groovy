@@ -2,17 +2,17 @@ package proyectobasededatos1
 
 class AuthController {
 
+    DataService dataService
+
     Map login() {
-        println 'hoolaaa'
-        def test = request.JSON
-        println params
-        println test
-        session.userAccountResponse = [name:'Gaspar']
-        session.userAuthenticationResponse =  [key:'test']
-        redirect (controller: 'dashboard', action: 'index')
-
-
-
+        def exists = dataService.getUserByEmail(params.email)
+        if (exists) {
+            session.userAccountResponse = [name:'Gaspar']
+            session.userAuthenticationResponse =  [key:'test']
+            redirect (controller: 'dashboard', action: 'index')
+        } else {
+            println('No se puede entrar')
+        }
     }
 
     /**
