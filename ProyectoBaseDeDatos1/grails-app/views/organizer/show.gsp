@@ -11,7 +11,7 @@
 		<a href="#show-organizer" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
 			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+				<li><a class="home" href="${createLink(uri: '/dashboard')}"><g:message code="default.home.label"/></a></li>
 				<li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
 				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
 			</ul>
@@ -22,6 +22,24 @@
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
 			<ol class="property-list organizer">
+			
+				<g:if test="${organizerInstance?.description}">
+				<li class="fieldcontain">
+					<span id="description-label" class="property-label"><g:message code="organizer.description.label" default="Description" /></span>
+					
+						<span class="property-value" aria-labelledby="description-label"><g:fieldValue bean="${organizerInstance}" field="description"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${organizerInstance?.name}">
+				<li class="fieldcontain">
+					<span id="name-label" class="property-label"><g:message code="organizer.name.label" default="Name" /></span>
+					
+						<span class="property-value" aria-labelledby="name-label"><g:fieldValue bean="${organizerInstance}" field="name"/></span>
+					
+				</li>
+				</g:if>
 			
 			</ol>
 			<g:form url="[resource:organizerInstance, action:'delete']" method="DELETE">
