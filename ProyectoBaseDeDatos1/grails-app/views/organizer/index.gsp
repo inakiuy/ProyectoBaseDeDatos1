@@ -32,19 +32,14 @@
 				</thead>
 				<tbody>
                  <g:each in="${organizers}">
-					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
-						<td><g:link action="show" id="${it.id}">${fieldValue(bean: organizer, field: "description")}</g:link></td>
-					
-						<td>${fieldValue(bean: it, field: "name")}</td>
-					
+					<tr class="even">
+						<td>${it.description}</td>
+						<td><g:link action="show" id="${it.id}">${it.name}</g:link></td>
 					</tr>
 				</g:each>
 				</tbody>
 			</table>
-			<div class="pagination">
-				<g:paginate total="${organizerInstanceCount ?: 0}" />
-			</div>
 		</div>
 	</body>
+
 </html>

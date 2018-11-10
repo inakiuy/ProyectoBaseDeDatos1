@@ -1,6 +1,6 @@
 package proyectobasededatos1
 
-
+import grails.converters.JSON
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
@@ -19,13 +19,12 @@ class OrganizerController {
             organizers = dataService.getOrganizerByUserId(userLogged.id)
         }
         render(view: "index", model: [organizers: organizers])
-       // [organizerInstanceList: organizers]
-
-        //respond model:[organizerInstanceList: organizers,organizerInstanceCount: organizers.size()]
     }
 
-    def show(Organizer organizerInstance) {
-        respond organizerInstance
+    def show() {
+        Map organizer = dataService.getOrganizerById(params.id)
+        organizer.hasProperty = false
+        [organizer: organizer]
     }
 
     def create() {
@@ -54,9 +53,12 @@ class OrganizerController {
             '*' { respond organizerInstance, [status: CREATED] }
         }
     }
+    @Transactional
+    def edit() {
+        def data = request.JSON
+        dataService.updateOrganizerById(data)
 
-    def edit(Organizer organizerInstance) {
-        respond organizerInstance
+        render [:] as JSON
     }
 
     @Transactional

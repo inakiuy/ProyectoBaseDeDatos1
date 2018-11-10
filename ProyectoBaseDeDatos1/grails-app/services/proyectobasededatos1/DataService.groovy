@@ -84,4 +84,52 @@ class DataService {
 
     }
 
+    Map getOrganizerById (id) {
+        String query = """
+
+        SELECT *
+        FROM    public.organizer       
+        WHERE   id = ?
+
+        """
+
+        Map organizer = [:]
+        Connection connection = dataSource.getConnection()
+        PreparedStatement statement = connection.prepareStatement(query)
+        statement.setLong(1, id as Long)
+        println(statement)
+        ResultSet resultSet = statement.executeQuery()
+        if (resultSet.rows.size > 0) {
+            while (resultSet.next()) {
+                organizer.id = resultSet.getInt(1)
+                organizer.description = resultSet.getString(2)
+                organizer.name = resultSet.getString(3)
+                organizer.type = resultSet.getInt(4)
+            }
+        }
+        println(organizer)
+
+        return organizer
+    }
+
+    void updateOrganizerById (def organizer) {
+        String query = """
+
+        UPDATE public.organizer
+        SET description=?, "name"=?, organizer_type_id=?
+        WHERE id= ?;
+
+        """
+
+        Connection connection = dataSource.getConnection()
+        PreparedStatement statement = connection.prepareStatement(query)
+        statement.setString(1, organizer.description)
+        statement.setString(2, organizer.name)
+        statement.setLong(3, 1)
+        statement.setLong(4, organizer.id as Long)
+        println(statement)
+        Integer result = statement.executeUpdate()
+        println(result)
+    }
+
 }

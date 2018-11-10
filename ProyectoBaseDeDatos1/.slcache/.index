@@ -5254,3 +5254,12 @@ n:2658:script15418299257771622389911$_run_closure3_closure5_closure8
 n:2762:script15418299257771622389911$_run_closure3_closure6
 n:3057:script15418299257771622389911$_run_closure3_closure6_closure9
 n:3976:script15418299257771622389911$_run_closure3_closure6_closure9_closure10
+n:17854:grails/converters/JSON
+n:499:org/codehaus/groovy/grails/web/converters/IncludeExcludeConverter
+n:732:org/codehaus/groovy/grails/web/converters/ConfigurableConverter
+n:3098:org/codehaus/groovy/grails/web/converters/AbstractConverter
+n:1199:org/codehaus/groovy/grails/web/converters/configuration/ConverterConfiguration
+n:2141:org/codehaus/groovy/grails/web/converters/Converter$CircularReferenceBehaviour
+n:6057:org/codehaus/groovy/grails/web/json/JSONWriter
+n:812:org/codehaus/groovy/grails/web/json/JSONException
+n:167:org/codehaus/groovy/grails/web/json/JSONElement

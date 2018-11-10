@@ -22,32 +22,43 @@
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
 			<ol class="property-list organizer">
-			
-				<g:if test="${organizerInstance?.description}">
+
+				<g:if test="${organizer?.id}">
+					<g:hiddenField name="idOrganizer" value="${organizer?.id}"></g:hiddenField>
+				</g:if>
+
+				<g:if test="${organizer?.description}">
 				<li class="fieldcontain">
 					<span id="description-label" class="property-label"><g:message code="organizer.description.label" default="Description" /></span>
 					
-						<span class="property-value" aria-labelledby="description-label"><g:fieldValue bean="${organizerInstance}" field="description"/></span>
-					
+						<span class="property-value" aria-labelledby="description-label">
+							<g:textField name="descriptionOrganizer" id="descriptionOrganizer" value="${organizer.description}" />
+						</span>
+
 				</li>
 				</g:if>
-			
-				<g:if test="${organizerInstance?.name}">
+
+				<g:if test="${organizer?.name}">
 				<li class="fieldcontain">
 					<span id="name-label" class="property-label"><g:message code="organizer.name.label" default="Name" /></span>
 					
-						<span class="property-value" aria-labelledby="name-label"><g:fieldValue bean="${organizerInstance}" field="name"/></span>
+						<span class="property-value" aria-labelledby="name-label">
+							<g:textField name="nameOrganizer" id="nameOrganizer" value="${organizer.name}" />
+						</span>
 					
 				</li>
 				</g:if>
 			
 			</ol>
-			<g:form url="[resource:organizerInstance, action:'delete']" method="DELETE">
+			<g:form url="[resource:organizer, action:'delete']" method="DELETE">
 				<fieldset class="buttons">
-					<g:link class="edit" action="edit" resource="${organizerInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
+					<a href="#"  id="editOrganizer">
+						<g:message code="default.button.edit.label" default="Edit" />
+					</a>
 					<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
 				</fieldset>
 			</g:form>
 		</div>
 	</body>
+
 </html>
