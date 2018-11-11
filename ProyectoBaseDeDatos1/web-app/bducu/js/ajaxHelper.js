@@ -85,6 +85,12 @@ $(document).ready(function(){
                 console.log(response)
                 window.location.replace('http://localhost:8098/ProyectoBaseDeDatos1/user/index');
 
+                if(register) {
+                    window.location.replace('http://localhost:8098/ProyectoBaseDeDatos1/');
+                } else  {
+                    window.location.replace('http://localhost:8098/ProyectoBaseDeDatos1/user/index');
+                }
+
             },
             "error" : function error (xhr) {
                 console.log(xhr)
