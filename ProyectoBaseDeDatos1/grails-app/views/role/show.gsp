@@ -22,22 +22,22 @@
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
 			<ol class="property-list role">
-			
+
 				<g:if test="${roleInstance?.description}">
 				<li class="fieldcontain">
 					<span id="description-label" class="property-label"><g:message code="role.description.label" default="Description" /></span>
-					
+
 						<span class="property-value" aria-labelledby="description-label"><g:fieldValue bean="${roleInstance}" field="description"/></span>
-					
+
 				</li>
 				</g:if>
-			
+
 				<g:if test="${roleInstance?.name}">
 				<li class="fieldcontain">
 					<span id="name-label" class="property-label"><g:message code="role.name.label" default="Name" /></span>
-					
+
 						<span class="property-value" aria-labelledby="name-label"><g:fieldValue bean="${roleInstance}" field="name"/></span>
-					
+
 				</li>
 				</g:if>
 			

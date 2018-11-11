@@ -31,13 +31,10 @@
 					</tr>
 				</thead>
 				<tbody>
-				<g:each in="${roleInstanceList}" status="i" var="roleInstance">
-					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
-						<td><g:link action="show" id="${roleInstance.id}">${fieldValue(bean: roleInstance, field: "description")}</g:link></td>
-					
-						<td>${fieldValue(bean: roleInstance, field: "name")}</td>
-					
+				<g:each in="${roles}">
+					<tr class="even">
+						<td>${it.description}</td>
+						<td><g:link action="show" id="${it.id}">${it.name}</g:link></td>
 					</tr>
 				</g:each>
 				</tbody>

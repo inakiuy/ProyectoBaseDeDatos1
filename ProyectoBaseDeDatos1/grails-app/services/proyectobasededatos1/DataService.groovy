@@ -83,6 +83,16 @@ class DataService {
 
         """
 
+        String queryOrgElement = """
+
+        SELECT  el.*
+            FROM    public.element el
+            INNER JOIN public.organizer org
+                ON org.id = el.organizer_id
+                WHERE org.id = ?
+
+        """
+
         Map organizer = [:]
         Connection connection = dataSource.getConnection()
         PreparedStatement statement = connection.prepareStatement(query)
@@ -98,6 +108,24 @@ class DataService {
             }
         }
         println(organizer)
+
+
+        PreparedStatement statement2 = connection.prepareStatement(queryOrgElement)
+        statement2.setLong(1, organizer.id as Long)
+        println(statement)
+        ResultSet resultSet2 = statement2.executeQuery()
+        List elements = []
+        if (resultSet2.rows.size > 0) {
+            while (resultSet2.next()) {
+                Map element = [:]
+                element.name = resultSet2.getString(3)
+                element.description = resultSet2.getString(2)
+                elements.add(element)
+            }
+        }
+
+        organizer.elements = []
+        organizer.elements = elements
 
         return organizer
     }
@@ -229,6 +257,34 @@ class DataService {
     }
 
 
+    List getRoles(){
+        String query = """
+
+    SELECT id, description, name
+      FROM public."role";
+
+        """
+
+        List roles = []
+        Connection connection = dataSource.getConnection()
+        PreparedStatement statement = connection.prepareStatement(query)
+        println(statement)
+        ResultSet resultSet = statement.executeQuery()
+        if (resultSet.rows.size > 0) {
+            while (resultSet.next()) {
+                Map role = [:]
+                role.id = resultSet.getString(1)
+                role.description = resultSet.getString(2)
+                role.name = resultSet.getString(3)
+                roles.add(role)
+            }
+        }
+        println(roles)
+
+        return roles
+    }
+
+
     Map getUserById(userId) {
         String query = """
 
@@ -256,8 +312,6 @@ class DataService {
         println(user)
 
         return user
-
-
 
     }
 

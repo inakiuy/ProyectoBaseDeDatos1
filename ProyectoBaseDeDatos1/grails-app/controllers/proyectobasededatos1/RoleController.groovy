@@ -8,11 +8,13 @@ import grails.transaction.Transactional
 @Transactional(readOnly = true)
 class RoleController {
 
+    DataService dataService
+
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-    def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond Role.list(params), model:[roleInstanceCount: Role.count()]
+    def index() {
+        List roles = dataService.getRoles()
+        render(view: "index", model: [roles: roles])
     }
 
     def show(Role roleInstance) {

@@ -70,7 +70,6 @@
 			<table>
 				<thead>
 				<tr>
-
 					<g:sortableColumn property="description" title="${message(code: 'organizer.description.label', default: 'Description')}" />
 
 					<g:sortableColumn property="name" title="${message(code: 'organizer.name.label', default: 'Name')}" />
@@ -78,16 +77,14 @@
 				</tr>
 				</thead>
 				<tbody>
-				<g:each in="${[1,2]}">
+				<g:each in="${organizer.elements}">
 					<tr class="even">
-						<td>lkjs</td>
-						<td><g:link action="show" >jsad</g:link></td>
+						<td>${it.description}</td>
+						<td><g:link action="show" >${it.name}</g:link></td>
 					</tr>
 				</g:each>
 				</tbody>
 			</table>
-
-
 		</div>
 	    <br>
 	    <div  class="content scaffold-show" role="main">

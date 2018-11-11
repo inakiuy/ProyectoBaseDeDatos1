@@ -15,6 +15,7 @@
           href='${request.contextPath}/bducu/css/bootstrap.min.css'>
     <link rel='stylesheet prefetch'
           href='${request.contextPath}/bducu/css/simple-sidebar.css'>
+    <script src="${request.contextPath}/bducu/js/jquery.min.js"></script>
 
 </head>
 
@@ -39,9 +40,8 @@
             <li>
                 <g:link controller="user">Usuarios</g:link>
             </li>
-            <li>
-                <g:link controller="element">Elementos</g:link>
-            </li>
+            <br>
+            <br>
             <br>
             <br>
             <br>
@@ -94,14 +94,32 @@
             </table>
         </div>
     </div>
+
+
+    <br>
+    <hr class="style1">
+    <br>
+
+
     <!-- /#page-content-wrapper -->
+    <div class="row">
+    <h3 style="
+    margin-left: 41px;
+    margin-top: 174px;
+    ">Buscar Elementos</h3>
+        <div class="col-12 col-md-10 col-lg-8">
+            <input class="form-control form-control-lg " type="search" placeholder="Buscar Nombre de elemento" style=" margin-top: 25px;
+            margin-left: 25px;>
+        </div>
+        <!--end of col-->
+    </div>
 
 </div>
 <!-- /#wrapper -->
 
 <!-- Bootstrap core JavaScript -->
 <script src="${request.contextPath}/bducu/js/bootstrap.min.js"></script>
-<script src="${request.contextPath}/bducu/js/jquery.min.js"></script>
+
 
 <!-- Menu Toggle Script -->
 <script>
