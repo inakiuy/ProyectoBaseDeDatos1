@@ -1,4 +1,9 @@
 $(document).ready(function(){
+    var register = $("#register").val()
+
+    if(register) {
+        $('#navCreate').css('display', 'none')
+    }
 
 
     $('#editOrganizer').click(function(e) {

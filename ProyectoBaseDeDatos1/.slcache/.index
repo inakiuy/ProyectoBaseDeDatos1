@@ -5284,3 +5284,14 @@ n:961:org/codehaus/groovy/syntax/ParserException
 n:1482:org/codehaus/groovy/syntax/TokenException
 n:2186:org/codehaus/groovy/grails/commons/GrailsApplication$addArtefact
 n:2275:org/codehaus/groovy/grails/commons/GrailsApplication$isArtefactOfType$0
+n:6390:script154197076714019077200
+n:2770:script154197076714019077200$_run_closure1
+n:3173:script154197076714019077200$_run_closure2
+n:2968:script154197076714019077200$_run_closure3
+n:2754:script154197076714019077200$_run_closure3_closure4
+n:2619:script154197076714019077200$_run_closure3_closure4_closure7
+n:2754:script154197076714019077200$_run_closure3_closure5
+n:2652:script154197076714019077200$_run_closure3_closure5_closure8
+n:2754:script154197076714019077200$_run_closure3_closure6
+n:3049:script154197076714019077200$_run_closure3_closure6_closure9
+n:3970:script154197076714019077200$_run_closure3_closure6_closure9_closure10
