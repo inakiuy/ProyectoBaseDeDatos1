@@ -13,7 +13,7 @@
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
       <user-name>gaspar</user-name>
-      <resolve-scope>bd-ucu:public,gaspar</resolve-scope>
+      <resolve-scope>bd-ucu:gaspar,public</resolve-scope>
     </data-source>
   </component>
 </project>

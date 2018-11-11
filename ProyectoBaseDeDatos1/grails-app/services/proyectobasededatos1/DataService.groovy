@@ -34,6 +34,34 @@ class DataService {
     }
 
 
+    Map getOrganizerType (id) {
+
+        String query = """
+
+       SELECT id, name, description
+        FROM public.organizer_type WHERE id = ?;
+
+        """
+
+        Map organizerType = [:]
+        Connection connection = dataSource.getConnection()
+        PreparedStatement statement = connection.prepareStatement(query)
+        statement.setLong(1, id as Long)
+        println(statement)
+        ResultSet resultSet = statement.executeQuery()
+        if (resultSet.rows.size > 0) {
+            while (resultSet.next()) {
+                organizerType.id = resultSet.getInt(1)
+                organizerType.name = resultSet.getString(2)
+                organizerType.description = resultSet.getString(3)
+            }
+        }
+        println(organizerType)
+
+        return organizerType
+
+    }
+
     List getOrganizerByUserId (userId) {
 
      String query = """
@@ -64,7 +92,8 @@ class DataService {
                 organizer.id = resultSet.getInt(1)
                 organizer.description = resultSet.getString(2)
                 organizer.name = resultSet.getString(3)
-                organizer.type = resultSet.getInt(4)
+                Map organizerType = getOrganizerType(resultSet.getInt(4))
+                organizer.type = organizerType.name
                 organizers.add(organizer)
             }
         }
