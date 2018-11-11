@@ -334,4 +334,38 @@ class DataService {
         }
     }
 
+    List searchElement (searchQuery, userId) {
+        String query = """
+                SELECT el.*
+                  FROM  public.element el
+                    INNER JOIN public.organizer org
+                      ON org.id = el.organizer_id
+                    INNER JOIN public.user_organizer_role uor
+                      ON uor.organizer_id = org.id
+                    WHERE uor.user_id = ?
+                and (LOWER(el.name) LIKE LOWER(?) AND LOWER(el.description) LIKE LOWER(?))
+        """
+
+        List elements = []
+
+        Connection connection = dataSource.getConnection()
+        PreparedStatement statement = connection.prepareStatement(query)
+        statement.setLong(1, userId as Long)
+        statement.setString(2, "%" + searchQuery + "%")
+        statement.setString(3, "%" + searchQuery + "%")
+        println(statement)
+        ResultSet resultSet = statement.executeQuery()
+        if (resultSet.rows.size > 0) {
+            while (resultSet.next()) {
+                Map element = [:]
+                element.id = resultSet.getString(1)
+                element.description = resultSet.getString(2)
+                element.name = resultSet.getString(3)
+                elements.add(element)
+            }
+        }
+
+        return elements
+    }
+
 }

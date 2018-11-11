@@ -1,6 +1,6 @@
 package proyectobasededatos1
 
-
+import grails.converters.JSON
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
@@ -9,6 +9,8 @@ import grails.transaction.Transactional
 class ElementController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+
+    DataService dataService
 
     def index() {
         Map userLogged = session.userAccountResponse
@@ -94,6 +96,17 @@ class ElementController {
             }
             '*'{ render status: NO_CONTENT }
         }
+    }
+
+    def search() {
+        def data = request.JSON
+        Map userLogged = session.userAccountResponse
+        def result
+        if (userLogged){
+            result = dataService.searchElement(data.searchQuery, userLogged.id)
+        }
+
+        render result as JSON
     }
 
     protected void notFound() {

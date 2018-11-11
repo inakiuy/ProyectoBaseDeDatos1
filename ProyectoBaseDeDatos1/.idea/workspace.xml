@@ -28,15 +28,35 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="show.gsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/views/organizer/show.gsp">
+      <file leaf-file-name="DataService.groovy" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/services/proyectobasededatos1/DataService.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="122" column="10" lean-forward="true" selection-start-line="65" selection-start-column="8" selection-end-line="122" selection-end-column="10" />
+            <state relative-caret-position="198">
+              <caret line="353" column="48" lean-forward="false" selection-start-line="353" selection-start-column="37" selection-end-line="353" selection-end-column="48" />
               <folding>
-                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <marker date="1541890809593" expanded="false" signature="3273:4434" ph="..." />
+                <element signature="e#30#61#0" expanded="true" />
+                <marker date="1541900256129" expanded="true" signature="467:492" ph="SELECT * FRO... user" />
+                <marker date="1541900256129" expanded="true" signature="467:506" ph="SELECT * FRO... user" />
+                <marker date="1541900256129" expanded="true" signature="467:507" ph="SELECT * FRO... user" />
+                <marker date="1541900256129" expanded="true" signature="467:512" ph="SELECT * FRO... user" />
+                <marker date="1541900256129" expanded="true" signature="467:517" ph="SELECT * FRO... user" />
+                <marker date="1541900256129" expanded="true" signature="467:538" ph="SELECT * FRO... user" />
+                <marker date="1541900256129" expanded="true" signature="467:555" ph="SELECT * FRO... user" />
+                <marker date="1541900256129" expanded="true" signature="1097:1408" ph="SELECT org.*... user_organizer_role" />
+                <marker date="1541900256129" expanded="true" signature="1097:1409" ph="SELECT org.*... user_organizer_role" />
+                <marker date="1541900256129" expanded="true" signature="2238:2309" ph="SELECT * FRO... organizer" />
+                <marker date="1541900256129" expanded="true" signature="2370:2541" ph="SELECT el.* element" />
+                <marker date="1541900256129" expanded="true" signature="3920:4020" ph="UPDATE publi... " />
+                <marker date="1541900256129" expanded="true" signature="4533:4608" ph="UPDATE publi... " />
+                <marker date="1541900256129" expanded="true" signature="5119:5225" ph="INSERT INTO public.organizer... " />
+                <marker date="1541900256129" expanded="true" signature="5298:5402" ph="INSERT INTO public.user_organizer_role... " />
+                <marker date="1541900256129" expanded="true" signature="6364:6468" ph="INSERT \tINT... user" />
+                <marker date="1541900256129" expanded="true" signature="6980:7051" ph="SELECT name,... user" />
+                <marker date="1541900256129" expanded="true" signature="6980:7052" ph="SELECT email... user" />
+                <marker date="1541900256129" expanded="true" signature="7828:7881" ph="SELECT id, d... role" />
+                <marker date="1541900256129" expanded="true" signature="8577:8643" ph="SELECT * FRO... user" />
+                <marker date="1541900256129" expanded="true" signature="9426:9462" ph="SELECT publi... " />
+                <marker date="1541900256129" expanded="true" signature="9965:10366" ph="SELECT\tel.*... element" />
               </folding>
             </state>
           </provider>
@@ -45,45 +65,43 @@
       <file leaf-file-name="index.gsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/views/index.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
+            <state relative-caret-position="123">
               <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create.gsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/views/organizer/create.gsp">
+      <file leaf-file-name="index.gsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/views/user/index.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="12" column="110" lean-forward="false" selection-start-line="12" selection-start-column="100" selection-end-line="12" selection-end-column="110" />
-              <folding>
-                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="show.gsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/views/role/show.gsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="49">
-              <caret line="18" column="55" lean-forward="true" selection-start-line="18" selection-start-column="55" selection-end-line="18" selection-end-column="55" />
+            <state relative-caret-position="629">
+              <caret line="37" column="37" lean-forward="true" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.gsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.gsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/views/dashboard/index.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="110" column="55" lean-forward="false" selection-start-line="110" selection-start-column="55" selection-end-line="110" selection-end-column="55" />
+            <state relative-caret-position="201">
+              <caret line="130" column="72" lean-forward="true" selection-start-line="130" selection-start-column="72" selection-end-line="130" selection-end-column="72" />
               <folding>
                 <element signature="n#style#0;n#h3#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ajaxHelper.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web-app/bducu/js/ajaxHelper.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="212">
+              <caret line="145" column="78" lean-forward="false" selection-start-line="145" selection-start-column="78" selection-end-line="145" selection-end-column="78" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -98,21 +116,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RoleController.groovy" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/controllers/proyectobasededatos1/RoleController.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="16" column="46" lean-forward="false" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OrganizerController.groovy" pinned="false" current-in-tab="false">
+      <file leaf-file-name="OrganizerController.groovy" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grails-app/controllers/proyectobasededatos1/OrganizerController.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="39" column="26" lean-forward="false" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
+            <state relative-caret-position="154">
+              <caret line="25" column="52" lean-forward="true" selection-start-line="25" selection-start-column="52" selection-end-line="25" selection-end-column="52" />
               <folding>
                 <element signature="e#30#59#0" expanded="true" />
               </folding>
@@ -120,21 +128,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.gsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/views/organizer/index.gsp">
+      <file leaf-file-name="ElementController.groovy" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/controllers/proyectobasededatos1/ElementController.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="24" lean-forward="true" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
+            <state relative-caret-position="227">
+              <caret line="105" column="35" lean-forward="true" selection-start-line="105" selection-start-column="35" selection-end-line="105" selection-end-column="35" />
+              <folding>
+                <element signature="e#30#59#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DashboardController.groovy" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/controllers/proyectobasededatos1/DashboardController.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="217">
+              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.gsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/views/role/index.gsp">
+        <entry file="file://$PROJECT_DIR$/grails-app/views/organizer/index.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="32" column="23" lean-forward="false" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+            <state relative-caret-position="-23">
+              <caret line="31" column="24" lean-forward="true" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -201,16 +221,16 @@
         <option value="$PROJECT_DIR$/grails-app/views/user/_form.gsp" />
         <option value="$PROJECT_DIR$/grails-app/views/user/create.gsp" />
         <option value="$PROJECT_DIR$/grails-app/controllers/proyectobasededatos1/UserController.groovy" />
-        <option value="$PROJECT_DIR$/web-app/bducu/js/ajaxHelper.js" />
-        <option value="$PROJECT_DIR$/grails-app/controllers/proyectobasededatos1/ElementController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/views/organizer/show.gsp" />
-        <option value="$PROJECT_DIR$/grails-app/services/proyectobasededatos1/DataService.groovy" />
         <option value="$PROJECT_DIR$/grails-app/views/role/show.gsp" />
         <option value="$PROJECT_DIR$/grails-app/views/role/index.gsp" />
         <option value="$PROJECT_DIR$/grails-app/controllers/proyectobasededatos1/RoleController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/views/organizer/create.gsp" />
         <option value="$PROJECT_DIR$/web-app/bducu/css/simple-sidebar.css" />
+        <option value="$PROJECT_DIR$/grails-app/controllers/proyectobasededatos1/ElementController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/views/dashboard/index.gsp" />
+        <option value="$PROJECT_DIR$/web-app/bducu/js/ajaxHelper.js" />
+        <option value="$PROJECT_DIR$/grails-app/services/proyectobasededatos1/DataService.groovy" />
       </list>
     </option>
   </component>
@@ -221,10 +241,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="-6" />
+    <option name="y" value="1" />
+    <option name="width" value="1378" />
+    <option name="height" value="733" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -270,12 +290,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Grails User Library (ProyectoBaseDeDatos1-grailsPlugins)" />
+              <option name="myItemId" value="Grails User Library (ProyectoBaseDeDatos1)" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="postgresql-9.4.1211.jre7.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -290,6 +306,10 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="Grails User Library (ProyectoBaseDeDatos1)" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="postgresql-9.4.1211.jre7.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -439,50 +459,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="grails-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ProyectoBaseDeDatos1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ProyectoBaseDeDatos1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="grails-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ProyectoBaseDeDatos1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ProyectoBaseDeDatos1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="grails-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="proyectobasededatos1" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -950,12 +926,12 @@
       <workItem from="1541719838604" duration="3261000" />
       <workItem from="1541806958458" duration="3647000" />
       <workItem from="1541820184211" duration="185000" />
-      <workItem from="1541820389207" duration="51214000" />
+      <workItem from="1541820389207" duration="55875000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61013000" />
+    <option name="totallyTimeSpent" value="65674000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -967,8 +943,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
-    <editor active="true" />
+    <frame x="-6" y="1" width="1378" height="733" extended-state="1" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -982,7 +958,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2786325" sideWeight="0.6998536" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38850173" sideWeight="0.6998536" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -994,7 +970,7 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31089258" sideWeight="0.4940171" order="8" side_tool="false" content_ui="combo" x="469" y="45" width="427" height="637" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31183612" sideWeight="0.4940171" order="8" side_tool="false" content_ui="combo" x="469" y="45" width="427" height="637" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20121029" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25340393" sideWeight="0.50598294" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1024,7 +1000,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2786325" sideWeight="0.6998536" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.75783974" sideWeight="0.6998536" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1038,7 +1014,7 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31089258" sideWeight="0.4940171" order="8" side_tool="false" content_ui="combo" x="469" y="45" width="427" height="637" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31183612" sideWeight="0.4940171" order="8" side_tool="false" content_ui="combo" x="469" y="45" width="427" height="637" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20121029" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25340393" sideWeight="0.50598294" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1367,8 +1343,26 @@
           <properties />
           <option name="timeStamp" value="99" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/grails-app/controllers/proyectobasededatos1/ElementController.groovy</url>
+          <line>104</line>
+          <properties />
+          <option name="timeStamp" value="100" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/grails-app/services/proyectobasededatos1/DataService.groovy</url>
+          <line>350</line>
+          <properties />
+          <option name="timeStamp" value="101" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/grails-app/services/proyectobasededatos1/DataService.groovy</url>
+          <line>358</line>
+          <properties />
+          <option name="timeStamp" value="102" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="100" />
+      <option name="time" value="103" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1529,14 +1523,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/proyectobasededatos1/DashboardController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/domain/proyectobasededatos1/Organizer.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1612,14 +1598,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/user/index.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="37" column="37" lean-forward="true" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/user/create.gsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -1636,14 +1614,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web-app/bducu/js/ajaxHelper.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="70" column="38" lean-forward="true" selection-start-line="70" selection-start-column="38" selection-end-line="70" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/proyectobasededatos1/UserController.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="214">
@@ -1651,14 +1621,6 @@
           <folding>
             <element signature="e#30#59#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/proyectobasededatos1/ElementController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="16" column="55" lean-forward="true" selection-start-line="16" selection-start-column="55" selection-end-line="16" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1683,37 +1645,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/services/proyectobasededatos1/DataService.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="278" column="23" lean-forward="false" selection-start-line="278" selection-start-column="23" selection-end-line="278" selection-end-column="23" />
-          <folding>
-            <element signature="e#30#61#0" expanded="true" />
-            <marker date="1541892610219" expanded="true" signature="467:492" ph="SELECT * FRO... user" />
-            <marker date="1541892610219" expanded="true" signature="467:506" ph="SELECT * FRO... user" />
-            <marker date="1541892610219" expanded="true" signature="467:507" ph="SELECT * FRO... user" />
-            <marker date="1541892610219" expanded="true" signature="467:512" ph="SELECT * FRO... user" />
-            <marker date="1541892610219" expanded="true" signature="467:517" ph="SELECT * FRO... user" />
-            <marker date="1541892610219" expanded="true" signature="467:538" ph="SELECT * FRO... user" />
-            <marker date="1541892610219" expanded="true" signature="467:555" ph="SELECT * FRO... user" />
-            <marker date="1541892610219" expanded="true" signature="1097:1408" ph="SELECT org.*... user_organizer_role" />
-            <marker date="1541892610219" expanded="true" signature="1097:1409" ph="SELECT org.*... user_organizer_role" />
-            <marker date="1541892610219" expanded="true" signature="2238:2309" ph="SELECT * FRO... organizer" />
-            <marker date="1541892610219" expanded="true" signature="2370:2541" ph="SELECT el.* element" />
-            <marker date="1541892610219" expanded="true" signature="3920:4020" ph="UPDATE publi... " />
-            <marker date="1541892610219" expanded="true" signature="4533:4608" ph="UPDATE publi... " />
-            <marker date="1541892610219" expanded="true" signature="5119:5225" ph="INSERT INTO public.organizer... " />
-            <marker date="1541892610219" expanded="true" signature="5298:5402" ph="INSERT INTO public.user_organizer_role... " />
-            <marker date="1541892610219" expanded="true" signature="6364:6468" ph="INSERT \tINT... user" />
-            <marker date="1541892610219" expanded="true" signature="6980:7051" ph="SELECT name,... user" />
-            <marker date="1541892610219" expanded="true" signature="6980:7052" ph="SELECT email... user" />
-            <marker date="1541892610219" expanded="true" signature="7828:7881" ph="SELECT id, d... role" />
-            <marker date="1541892610219" expanded="true" signature="8577:8643" ph="SELECT * FRO... user" />
-            <marker date="1541892610219" expanded="true" signature="9426:9462" ph="SELECT publi... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1772,32 +1703,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/proyectobasededatos1/OrganizerController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="39" column="26" lean-forward="false" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
-          <folding>
-            <element signature="e#30#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/index.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/organizer/index.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="24" lean-forward="true" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web-app/bducu/css/simple-sidebar.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="497">
@@ -1806,13 +1711,106 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/organizer/index.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-23">
+          <caret line="31" column="24" lean-forward="true" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/user/index.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="37" column="37" lean-forward="true" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/dashboard/index.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="110" column="55" lean-forward="false" selection-start-line="110" selection-start-column="55" selection-end-line="110" selection-end-column="55" />
+        <state relative-caret-position="201">
+          <caret line="130" column="72" lean-forward="true" selection-start-line="130" selection-start-column="72" selection-end-line="130" selection-end-column="72" />
           <folding>
             <element signature="n#style#0;n#h3#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web-app/bducu/js/ajaxHelper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="145" column="78" lean-forward="false" selection-start-line="145" selection-start-column="78" selection-end-line="145" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/index.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/proyectobasededatos1/DashboardController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/proyectobasededatos1/ElementController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="105" column="35" lean-forward="true" selection-start-line="105" selection-start-column="35" selection-end-line="105" selection-end-column="35" />
+          <folding>
+            <element signature="e#30#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/services/proyectobasededatos1/DataService.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="353" column="48" lean-forward="false" selection-start-line="353" selection-start-column="37" selection-end-line="353" selection-end-column="48" />
+          <folding>
+            <element signature="e#30#61#0" expanded="true" />
+            <marker date="1541900256129" expanded="true" signature="467:492" ph="SELECT * FRO... user" />
+            <marker date="1541900256129" expanded="true" signature="467:506" ph="SELECT * FRO... user" />
+            <marker date="1541900256129" expanded="true" signature="467:507" ph="SELECT * FRO... user" />
+            <marker date="1541900256129" expanded="true" signature="467:512" ph="SELECT * FRO... user" />
+            <marker date="1541900256129" expanded="true" signature="467:517" ph="SELECT * FRO... user" />
+            <marker date="1541900256129" expanded="true" signature="467:538" ph="SELECT * FRO... user" />
+            <marker date="1541900256129" expanded="true" signature="467:555" ph="SELECT * FRO... user" />
+            <marker date="1541900256129" expanded="true" signature="1097:1408" ph="SELECT org.*... user_organizer_role" />
+            <marker date="1541900256129" expanded="true" signature="1097:1409" ph="SELECT org.*... user_organizer_role" />
+            <marker date="1541900256129" expanded="true" signature="2238:2309" ph="SELECT * FRO... organizer" />
+            <marker date="1541900256129" expanded="true" signature="2370:2541" ph="SELECT el.* element" />
+            <marker date="1541900256129" expanded="true" signature="3920:4020" ph="UPDATE publi... " />
+            <marker date="1541900256129" expanded="true" signature="4533:4608" ph="UPDATE publi... " />
+            <marker date="1541900256129" expanded="true" signature="5119:5225" ph="INSERT INTO public.organizer... " />
+            <marker date="1541900256129" expanded="true" signature="5298:5402" ph="INSERT INTO public.user_organizer_role... " />
+            <marker date="1541900256129" expanded="true" signature="6364:6468" ph="INSERT \tINT... user" />
+            <marker date="1541900256129" expanded="true" signature="6980:7051" ph="SELECT name,... user" />
+            <marker date="1541900256129" expanded="true" signature="6980:7052" ph="SELECT email... user" />
+            <marker date="1541900256129" expanded="true" signature="7828:7881" ph="SELECT id, d... role" />
+            <marker date="1541900256129" expanded="true" signature="8577:8643" ph="SELECT * FRO... user" />
+            <marker date="1541900256129" expanded="true" signature="9426:9462" ph="SELECT publi... " />
+            <marker date="1541900256129" expanded="true" signature="9965:10366" ph="SELECT\tel.*... element" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/proyectobasededatos1/OrganizerController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="25" column="52" lean-forward="true" selection-start-line="25" selection-start-column="52" selection-end-line="25" selection-end-column="52" />
+          <folding>
+            <element signature="e#30#59#0" expanded="true" />
           </folding>
         </state>
       </provider>

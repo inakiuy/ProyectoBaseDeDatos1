@@ -108,19 +108,28 @@
     margin-top: 174px;
     ">Buscar Elementos</h3>
         <div class="col-12 col-md-10 col-lg-8">
-            <input class="form-control form-control-lg " type="search" placeholder="Buscar Nombre de elemento" style=" margin-top: 25px;
+            <input id="searchQuery" class="form-control form-control-lg " type="search" placeholder="Nombre o Descripcion de elemento" style=" margin-top: 25px;
             margin-left: 25px;>
         </div>
+
+            <div class="col-auto">
+            <button id="seachButton" class="btn btn-md btn-success" type="submit" style="
+            margin-left: 767px;
+            margin-top: -58px;
+            ">Search</button>
+            </div>
+    </div>
+
         <!--end of col-->
     </div>
 
 </div>
+
 <!-- /#wrapper -->
 
 <!-- Bootstrap core JavaScript -->
 <script src="${request.contextPath}/bducu/js/bootstrap.min.js"></script>
-
-
+<script src="${request.contextPath}/bducu/js/ajaxHelper.js"></script>
 <!-- Menu Toggle Script -->
 <script>
     $("#menu-toggle").click(function(e) {
