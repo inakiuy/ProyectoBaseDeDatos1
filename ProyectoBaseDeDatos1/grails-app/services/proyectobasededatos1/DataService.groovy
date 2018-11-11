@@ -118,6 +118,7 @@ class DataService {
         if (resultSet2.rows.size > 0) {
             while (resultSet2.next()) {
                 Map element = [:]
+                element.id = resultSet2.getLong(1)
                 element.name = resultSet2.getString(3)
                 element.description = resultSet2.getString(2)
                 elements.add(element)
@@ -129,6 +130,38 @@ class DataService {
 
         return organizer
     }
+
+    Map getElementById (id) {
+        String query = """
+
+        SELECT *
+        FROM    public.element       
+        WHERE   id = ?
+
+        """
+
+        Map element = [:]
+        Connection connection = dataSource.getConnection()
+        PreparedStatement statement = connection.prepareStatement(query)
+        statement.setLong(1, id as Long)
+        println(statement)
+        ResultSet resultSet = statement.executeQuery()
+        if (resultSet.rows.size > 0) {
+            while (resultSet.next()) {
+                element.id = resultSet.getInt(1)
+                element.description = resultSet.getString(2)
+                element.name = resultSet.getString(3)
+            }
+        }
+        println(element)
+
+
+        return element
+    }
+
+
+
+
 
     void updateOrganizerById (def organizer) {
         String query = """
@@ -145,6 +178,26 @@ class DataService {
         statement.setString(2, organizer.name)
         statement.setLong(3, 1)
         statement.setLong(4, organizer.id as Long)
+        println(statement)
+        Integer result = statement.executeUpdate()
+        println(result)
+    }
+
+
+    void updateElementById (def element) {
+        String query = """
+
+        UPDATE public.element
+        SET description=?, "name"=?
+        WHERE id= ?;
+
+        """
+
+        Connection connection = dataSource.getConnection()
+        PreparedStatement statement = connection.prepareStatement(query)
+        statement.setString(1, element.description)
+        statement.setString(2, element.name)
+        statement.setLong(3, element.id as Long)
         println(statement)
         Integer result = statement.executeUpdate()
         println(result)
@@ -168,6 +221,25 @@ class DataService {
         println(statement)
         Integer result = statement.executeUpdate()
         println(result)
+
+    }
+
+    void createElement (def data) {
+
+        String query = """
+          INSERT INTO public.element(
+            description, name, organizer_id, element_type_id)
+                VALUES ( ?, ?, ?, ?);
+        """
+
+        Connection connection = dataSource.getConnection()
+        PreparedStatement statement = connection.prepareStatement(query)
+        statement.setString(1, data.description)
+        statement.setString(2, data.name)
+        statement.setLong(3, data.idOrganizer as Long)
+        statement.setLong(4, 1)
+        println(statement)
+        Boolean result = statement.execute()
 
     }
 
@@ -329,9 +401,38 @@ class DataService {
         statement.setLong(2, data.idOrganizer as Long)
         println(statement)
         ResultSet resultSet = statement.executeQuery()
-        if (resultSet.rows.size > 0) {
 
-        }
+    }
+
+
+    void deleteElement(data){
+
+        String query = """
+                SELECT public."DeleteElement"(?,?)
+        """
+
+        Map user = [:]
+        Connection connection = dataSource.getConnection()
+        PreparedStatement statement = connection.prepareStatement(query)
+        statement.setLong(1, data.idUser as Long)
+        statement.setLong(2, data.idElement as Long)
+        println(statement)
+        ResultSet resultSet = statement.executeQuery()
+
+    }
+
+    void deleteUser(data){
+        String query = """
+               SELECT public."DeleteUser"(?)
+        """
+
+        Map user = [:]
+        Connection connection = dataSource.getConnection()
+        PreparedStatement statement = connection.prepareStatement(query)
+        statement.setLong(1, data.idUser as Long)
+        println(statement)
+        ResultSet resultSet = statement.executeQuery()
+
     }
 
     List searchElement (searchQuery, userId) {

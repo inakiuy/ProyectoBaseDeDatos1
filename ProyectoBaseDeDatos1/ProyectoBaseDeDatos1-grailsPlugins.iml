@@ -187,7 +187,7 @@
           <root url="jar://$MODULE_DIR$/../../ggts-bundle/grails-2.3.11/lib/org.apache.ant/ant-launcher/jars/ant-launcher-1.8.4.jar!/" />
           <root url="jar://$MODULE_DIR$/../../ggts-bundle/grails-2.3.11/lib/org.apache.ant/ant/jars/ant-1.8.4.jar!/" />
           <root url="jar://$MODULE_DIR$/../../ggts-bundle/grails-2.3.11/lib/jline/jline/jars/jline-2.12.jar!/" />
-          <root url="jar://$MAVEN_REPOSITORY$/org/postgresql/postgresql/9.4.1211.jre7/postgresql-9.4.1211.jre7.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/postgresql/postgresql/42.2.5.jre7/postgresql-42.2.5.jre7.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

@@ -80,7 +80,7 @@
 				<g:each in="${organizer.elements}">
 					<tr class="even">
 						<td>${it.description}</td>
-						<td><g:link action="show" >${it.name}</g:link></td>
+						<td><g:link controller="element" action="show" id="${it.id}" params="[idOrganizer: organizer?.id]">${it.name}</g:link></td>
 					</tr>
 				</g:each>
 				</tbody>

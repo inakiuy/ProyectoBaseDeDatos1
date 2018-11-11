@@ -8,7 +8,7 @@ import grails.transaction.Transactional
 @Transactional(readOnly = true)
 class ElementController {
 
-    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+    static allowedMethods = [save: "POST", update: "PUT", delete: "POST"]
 
     DataService dataService
 
@@ -21,8 +21,11 @@ class ElementController {
         render(view: "index", model: [users: users])
     }
 
-    def show(Element elementInstance) {
-        respond elementInstance
+    def show() {
+        Map element = dataService.getElementById(params.id)
+        Map userLogged = session.userAccountResponse
+        element.hasProperty = false
+        [element: element, idOrganizer: params.idOrganizer, idUser: userLogged.id]
     }
 
     def create() {
@@ -30,30 +33,20 @@ class ElementController {
     }
 
     @Transactional
-    def save(Element elementInstance) {
-        if (elementInstance == null) {
-            notFound()
-            return
-        }
+    def save() {
+        def data = request.JSON
+        dataService.createElement(data)
 
-        if (elementInstance.hasErrors()) {
-            respond elementInstance.errors, view:'create'
-            return
-        }
-
-        elementInstance.save flush:true
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'element.label', default: 'Element'), elementInstance.id])
-                redirect elementInstance
-            }
-            '*' { respond elementInstance, [status: CREATED] }
-        }
+        render [:] as JSON
     }
 
-    def edit(Element elementInstance) {
-        respond elementInstance
+
+    @Transactional
+    def edit() {
+        def data = request.JSON
+        dataService.updateElementById(data)
+
+        render [:] as JSON
     }
 
     @Transactional
@@ -80,33 +73,33 @@ class ElementController {
     }
 
     @Transactional
-    def delete(Element elementInstance) {
+    def delete() {
+        def data = request.JSON
+        dataService.deleteElement(data)
 
-        if (elementInstance == null) {
-            notFound()
-            return
-        }
+        render [:] as JSON
 
-        elementInstance.delete flush:true
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'Element.label', default: 'Element'), elementInstance.id])
-                redirect action:"index", method:"GET"
-            }
-            '*'{ render status: NO_CONTENT }
-        }
     }
 
     def search() {
         def data = request.JSON
         Map userLogged = session.userAccountResponse
-        def result
+        def result = []
+        Boolean existsData = true
+        String htmlContentSearchResult
         if (userLogged){
             result = dataService.searchElement(data.searchQuery, userLogged.id)
+            htmlContentSearchResult = g.render([template: 'elementResult' , model: [elements: result]])
         }
 
-        render result as JSON
+        if (result.empty){
+            existsData = false
+        }
+
+        Map responseData = [existsData: existsData,
+                            htmlContent: htmlContentSearchResult]
+
+        render responseData as JSON
     }
 
     protected void notFound() {

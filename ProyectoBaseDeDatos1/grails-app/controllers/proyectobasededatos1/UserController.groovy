@@ -10,7 +10,7 @@ class UserController {
 
     DataService dataService
 
-    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+    static allowedMethods = [save: "POST", update: "PUT", delete: "POST"]
 
     def index(Integer max) {
         Map userLogged = session.userAccountResponse
@@ -70,22 +70,11 @@ class UserController {
     }
 
     @Transactional
-    def delete(User userInstance) {
+    def delete() {
+        def data = request.JSON
+        dataService.deleteUser(data)
 
-        if (userInstance == null) {
-            notFound()
-            return
-        }
-
-        userInstance.delete flush:true
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'User.label', default: 'User'), userInstance.id])
-                redirect action:"index", method:"GET"
-            }
-            '*'{ render status: NO_CONTENT }
-        }
+        render [:] as JSON
     }
 
     protected void notFound() {
