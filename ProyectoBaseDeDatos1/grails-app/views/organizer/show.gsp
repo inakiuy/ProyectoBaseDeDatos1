@@ -64,6 +64,9 @@
 			</g:form>
 		</div>
         <br>
+
+
+	    <!-- LISTA DE ELEMENTOS-->
 	    <div class="content scaffold-show" role="main">
 			<h1>Elementos del organizador ${organizer?.name}</h1>
 			<br>
@@ -87,6 +90,8 @@
 			</table>
 		</div>
 	    <br>
+
+	<!-- CREACION  DE ELEMENTOS-->
 	    <div  class="content scaffold-show" role="main">
 		<h1><g:message code="default.create.label" args="['Elemento']" /></h1>
 		<g:if test="${flash.message}">
@@ -120,7 +125,40 @@
 				</a>
 			</fieldset>
 		</g:form>
-	</div>
+		</div>
+
+
+		<!-- COMPARTIR ORGANIZADOR-->
+		<div  class="content scaffold-show" role="main">
+		<h1>Compartir Organizador</h1>
+		<g:if test="${flash.message}">
+			<div class="message" role="status">${flash.message}</div>
+		</g:if>
+		<ol class="property-list organizer">
+			<fieldset class="form">
+				<div class="fieldcontain ${hasErrors(bean: elementInstance, field: 'description', 'error')} required">
+					<label for="description">
+						Seleccione un usuario
+						<span class="required-indicator">*</span>
+					</label>
+					<g:select from="${organizer.users}" optionKey="id" optionValue="${{it.nameAndLastName?.toUpperCase()}}" name="user"/>
+
+				</div>
+
+			</fieldset>
+		</ol>
+		<g:form url="[resource:organizer, action:'delete']" method="DELETE">
+			<fieldset class="buttons">
+				<a href="#"  id="shareOrganizer">
+					Compartir
+				</a>
+			</fieldset>
+		</g:form>
+		</div>
+
+
+
+
 	</body>
 
 </html>

@@ -65,5 +65,31 @@
 				</fieldset>
 			</g:form>
 		</div>
+
+
+        <!-- LISTA DE DETALLE DE ELEMENTOS-->
+        <div class="content scaffold-show" role="main">
+        <h1>Detalles del elemento ${element?.name}</h1>
+        <br>
+        <table>
+            <thead>
+            <tr>
+                <g:sortableColumn property="id" title="Id" />
+                <g:sortableColumn property="name" title="${message(code: 'organizer.name.label', default: 'Name')}" />
+                <g:sortableColumn property="value" title="Valor" />
+
+            </tr>
+            </thead>
+            <tbody>
+            <g:each in="${element.elementDetails}">
+                <tr class="even">
+                    <td><g:link controller="detailElement" action="show" id="${it.id}">${it.id}</g:link></td>
+                    <td>${it.name}</td>
+                    <td>${it.value}</td>
+                </tr>
+            </g:each>
+            </tbody>
+        </table>
+      </div>
 	</body>
 </html>

@@ -12,7 +12,7 @@
 		<div class="nav" role="navigation">
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/dashboard')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+
 			</ul>
 		</div>
 		<div id="list-role" class="content scaffold-list" role="main">
@@ -34,7 +34,8 @@
 				<g:each in="${roles}">
 					<tr class="even">
 						<td>${it.description}</td>
-						<td><g:link action="show" id="${it.id}">${it.name}</g:link></td>
+						<td>${it.name}</td>
+
 					</tr>
 				</g:each>
 				</tbody>

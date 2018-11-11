@@ -22,8 +22,9 @@ class OrganizerController {
     }
 
     def show() {
-        Map organizer = dataService.getOrganizerById(params.id)
         Map userLogged = session.userAccountResponse
+        Map organizer = dataService.getOrganizerById(params.id, userLogged.id)
+
         organizer.hasProperty = false
         [organizer: organizer, user: userLogged]
     }
@@ -36,6 +37,14 @@ class OrganizerController {
     def save() {
         def data = request.JSON
         dataService.createOrganizer(data)
+
+        render [:] as JSON
+    }
+
+    @Transactional
+    def share() {
+        def data = request.JSON
+        dataService.shareOrganizer(data)
 
         render [:] as JSON
     }

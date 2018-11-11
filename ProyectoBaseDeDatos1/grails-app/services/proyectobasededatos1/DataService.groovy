@@ -74,7 +74,7 @@ class DataService {
 
     }
 
-    Map getOrganizerById (id) {
+    Map getOrganizerById (id, userId) {
         String query = """
 
         SELECT *
@@ -125,8 +125,14 @@ class DataService {
             }
         }
 
+        List users = getUsers(userId)
+
         organizer.elements = []
+        organizer.users = []
+        organizer.users = users
         organizer.elements = elements
+
+        println(organizer)
 
         return organizer
     }
@@ -137,6 +143,16 @@ class DataService {
         SELECT *
         FROM    public.element       
         WHERE   id = ?
+
+        """
+
+        String queryOrgElement = """
+
+       SELECT eld.*
+        FROM    public.element_detail eld
+            INNER JOIN public.element el
+            ON eld.element_id = el.id
+            WHERE   el.id = ?
 
         """
 
@@ -153,15 +169,30 @@ class DataService {
                 element.name = resultSet.getString(3)
             }
         }
+
         println(element)
 
+        List elementDetails = []
+        PreparedStatement statement2 = connection.prepareStatement(queryOrgElement)
+        statement2.setLong(1, id as Long)
+        println(statement2)
+        ResultSet resultSet2 = statement2.executeQuery()
+        List elements = []
+        if (resultSet2.rows.size > 0) {
+            while (resultSet2.next()) {
+                Map elementDetail = [:]
+                elementDetail.id = resultSet2.getLong(1)
+                elementDetail.name = resultSet2.getString(4)
+                elementDetail.value = resultSet2.getString(5)
+                elementDetails.add(elementDetail)
+            }
+        }
+
+        element.elementDetails = []
+        element.elementDetails = elementDetails
 
         return element
     }
-
-
-
-
 
     void updateOrganizerById (def organizer) {
         String query = """
@@ -238,6 +269,24 @@ class DataService {
         statement.setString(2, data.name)
         statement.setLong(3, data.idOrganizer as Long)
         statement.setLong(4, 1)
+        println(statement)
+        Boolean result = statement.execute()
+
+    }
+
+    void shareOrganizer (def data) {
+
+        String query = """
+          INSERT INTO public.user_organizer_role(
+            user_id, organizer_id, role_id)
+                VALUES (?, ?, ?);
+        """
+
+        Connection connection = dataSource.getConnection()
+        PreparedStatement statement = connection.prepareStatement(query)
+        statement.setLong(1, data.userIdToShare as Long)
+        statement.setLong(2, data.idOrganizer as Long)
+        statement.setLong(3, 2)
         println(statement)
         Boolean result = statement.execute()
 
@@ -320,6 +369,7 @@ class DataService {
                 user.email = resultSet.getString(2)
                 user.lastname = resultSet.getString(3)
                 user.name = resultSet.getString(4)
+                user.nameAndLastName = "${user.name} ${user.lastname}"
                 users.add(user)
             }
         }

@@ -276,4 +276,27 @@ $(document).ready(function(){
 
         });
     });
+
+    $('#shareOrganizer').click(function(e) {
+        var idOrganizer = $("#idOrganizer").val()
+        var userIdToShare = $('#user option:selected').val()
+        $.ajax({
+            "url" : 'http://localhost:8098/ProyectoBaseDeDatos1/organizer/share',
+            "type" : "POST",
+            "contentType" : "application/json; charset=utf-8",
+            "data" : JSON.stringify({
+                "userIdToShare" : userIdToShare,
+                "idOrganizer" : idOrganizer
+            }),
+            "dataType" : "json",
+            "success" : function success (response) {
+                console.log(response)
+                window.location.replace('http://localhost:8098/ProyectoBaseDeDatos1/organizer/show/' + idOrganizer);
+            },
+            "error" : function error (xhr) {
+                console.log(xhr)
+            }
+
+        });
+    });
 });
